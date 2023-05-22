@@ -1,9 +1,10 @@
 import React from "react";
+import CurrencyConverter from "../CurrencyConverter";
 
 const FirstTab = () => {
     return (
         <div className="FirstTab">
-            <p>First Tab</p>
+            <CurrencyConverter />
             {/* First tab content will go here */}
         </div>
     );

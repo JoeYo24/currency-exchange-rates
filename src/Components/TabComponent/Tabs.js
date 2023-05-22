@@ -18,13 +18,13 @@ const Tabs = () => {
                     className={activeTab === "tab1" ? "active" : ""}
                     onClick={handleTab1}
                 >
-                    Tab 1
+                    Convert
                 </li>
                 <li 
                     className={activeTab === "tab2" ? "active" : ""}
                     onClick={handleTab2}
                 >
-                    Tab 2
+                    Exchange Rates
                 </li>
             </ul>
             <div className="outlet">
