@@ -15,6 +15,10 @@ function App() {
       </nav><div className="App">
           <Tabs />
         </div>
+        <footer>
+          <p>Made by Joseph Steffen with help from Altcademy</p>
+          <a href='https://gentle-biscotti-f4686f.netlify.app/'>My portfolio</a>
+        </footer>
     </Router>
   );
 }
