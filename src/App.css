@@ -3,22 +3,22 @@
   padding: 0;
   margin: 0;
 }
-
-
+html {
+  width: fit-content;
+}
 .App {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-
 .Tabs {
   width: 80%;
   height: auto;
   min-height: 400px;
-  background: #054742;
+  background: #ffffff;
   margin: 3.5rem auto 1.5rem;
   padding: 2rem 1rem;
   color: #e8f0f2;
@@ -26,8 +26,8 @@
   @media (max-width: 769px) {
     padding: 2rem 0;
   }
+  border: 10px solid rgb(0, 153, 255);
 }
-
 ul.nav {
   width: 60%;
   margin: 0 auto 2rem;
@@ -40,6 +40,7 @@ ul.nav {
   @media (max-width 768px) {
     width: 90%;
   }
+  color: black;
 }
 ul.nav li {
   width: 50%;
@@ -48,6 +49,7 @@ ul.nav li {
   text-align: center;
   cursor: pointer;
   transition: all .7s;
+  border-radius: 0;
   border-bottom-left-radius: 2rem;
   border-top-left-radius: 2rem;
 }
@@ -65,5 +67,61 @@ ul.nav li.active {
 .FirstTab p,
 .SecondTab p {
   font-size: 2rem;
+  text-align: center;
+}
+.SecondTab {
+  color: black;
+}
+#currencyconverter {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  text-align: center;
+  margin-left: auto;
+  align-content: center;
+  color: black;
+}
+label {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 1rem .5rem;
+}
+button {
+  margin: 1rem .5rem;
+  display: flex;
+  align-items: center;
+}
+input {
+  width: 100px;
+}
+input[type="number"] {
+  -moz-appearance: textfield
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .FirstTab,
+  .SecondTab {
+    width: 100%;
+  }
+  .label {
+    font-size: 1rem;
+    margin: .5rem 0;
+    display: block;
+  }
+  .btn {
+    display: block;
+    margin: 1rem auto;
+  }
+}
+.footer {
+  display: inline-block;
+  margin: 1rem auto;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
   text-align: center;
 }
