@@ -125,3 +125,12 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   text-align: center;
 }
+#firstli {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+li {
+  list-style: none;
+  font-weight: bold;
+}
