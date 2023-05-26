@@ -24,9 +24,6 @@ const SecondTab = () => {
       })
   }, []);
 
-  const ratesDivs1 = rates.map((rate, index) => {
-    return <li value={rate.currency} key={index}>{rate.currency}: {rate.rate}</li>
-  })
 
   // Splitting `ratesDivs1` into even 8 columns using Bootstrap grid system
   const columnSize = Math.ceil(rates.length / 8);

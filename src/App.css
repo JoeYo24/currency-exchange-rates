@@ -122,6 +122,9 @@ input::-webkit-inner-spin-button {
   li {
     font-size: 13px;
   }
+  .chart {
+    display: none !important;
+  }
 }
 .footer {
   display: inline-block;
@@ -139,4 +142,10 @@ input::-webkit-inner-spin-button {
 li {
   list-style: none;
   font-weight: bold;
+}
+.chart {
+  width: 85% !important;
+  height: 450px !important;
+  display: inline-flex;
+  margin: 0 auto;
 }
