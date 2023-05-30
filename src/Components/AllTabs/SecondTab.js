@@ -3,9 +3,28 @@ import { json, checkStatus } from "../utils";
 
 const SecondTab = () => {
   const [rates, setRates] = useState([]);
+  const [currencyArray, setCurrencyArray] = useState([]);
+  const [currency, setCurrency] = useState("USD");
+  const [base, setBase] = useState(1.00);
 
   useEffect(() => {
-    fetch('https://api.frankfurter.app/latest?from=USD')
+    fetch('https://api.frankfurter.app/currencies')
+      .then(checkStatus)
+      .then(json)
+      .then((data) => {
+        console.log(data);
+        if (data) {
+          const currencyArray = Object.keys(data).map((currency) => currency);
+          setCurrencyArray(currencyArray);
+          console.log(currency);
+        }}
+      )
+      .catch((error) => {
+        console.log(error);
+      })}, []);
+
+  useEffect(() => {
+    fetch(`https://api.frankfurter.app/latest?from=${currency}`)
       .then(checkStatus)
       .then(json)
       .then((data) => {
@@ -22,10 +41,8 @@ const SecondTab = () => {
       .catch((error) => {
         console.log(error);
       })
-  }, []);
+  }, [currency]);
 
-
-  // Splitting `ratesDivs1` into even 8 columns using Bootstrap grid system
   const columnSize = Math.ceil(rates.length / 8);
   const ratesColumns = [];
   
@@ -48,7 +65,15 @@ const SecondTab = () => {
       <div className="row">
         <div>
           <ul id="firstli">
-            <li>Base Currency = USD: 1.00</li>
+            <li>Base Currency =
+              <span>
+                <select value={currency} onChange={(e) => setCurrency(e.target.value)}>
+                  {currencyArray.map((currencyOption, index) => (
+                    <option value={currencyOption} key={index}>{currencyOption}</option>
+                  ))}
+                </select>: {base.toFixed(2)}
+              </span>
+            </li>
           </ul>
         </div>
         {ratesColumns}
