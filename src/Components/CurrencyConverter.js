@@ -9,8 +9,8 @@ class CurrencyConverter extends React.Component {
             amount: 1.00,
             total: 0.00,
             currencies: {},
-            from: '',
-            to: '',
+            from: 'AUD',
+            to: 'BGN',
             chartInstance: null
         };
         this.chartRef = React.createRef();
