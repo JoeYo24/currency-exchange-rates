@@ -83,7 +83,7 @@ class CurrencyConverter extends React.Component {
                 console.log(data);
                 const chartLabels = Object.keys(data.rates);
                 const chartData = Object.values(data.rates).map(rate => rate[to]);
-                const chartLabel = `${from}/${to}`;
+                const chartLabel = `${from}/${to}`; 
                 this.buildChart(chartLabels, chartData, chartLabel);
             })
             .catch(error => console.error(error.message));
@@ -91,29 +91,29 @@ class CurrencyConverter extends React.Component {
 
     buildChart = (labels, data, label) => {
         const chartContext = this.chartRef.current.getContext('2d');
-    
+      
         if (this.state.chartInstance !== null) {
-            this.state.chartInstance.destroy();
+          this.state.chartInstance.destroy();
         }
-
+      
         this.setState({
-            chartInstance: new Chart(chartContext, {
-                type: 'line',
-                data: {
-                    labels,
-                    datasets: [{
-                        label: label,
-                        data,
-                        fill: false,
-                        tension: 0,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                }
-            })
+          chartInstance: new Chart(chartContext, {
+            type: 'line',
+            data: {
+              labels,
+              datasets: [{
+                label,
+                data,
+                fill: false,
+                tension: 0,
+              }]
+            },
+            options: {
+              responsive: true,
+            }
+          })
         });
-    }
+      }
 
     render() {
         if (!Object.keys(this.state.currencies).length) {
